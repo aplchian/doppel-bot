@@ -16,6 +16,7 @@ from .common import (
 @stub.cls(
     gpu=gpu.A100(memory=20),
     shared_volumes={VOL_MOUNT_PATH: output_vol},
+    container_idle_timeout=300,
 )
 class OpenLlamaModel(ClsMixin):
     def __init__(self, user: str, team_id: Optional[str] = None):
